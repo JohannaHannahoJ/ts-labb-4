@@ -1,0 +1,21 @@
+
+header {
+    text-align: center;
+    background-color: var(--piff);
+    padding-top: 2rem;
+}
+
+header h1 {
+    font-size: 60px;
+    background-color: var(--piff);
+}
+
+footer {
+    font-weight: bold;
+    font-size: 90%;
+    text-align: center;
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: var(--text);
+    color: var(--bg);
+}
