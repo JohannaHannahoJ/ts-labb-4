@@ -1,1 +1,4 @@
 <p>courses works!</p>
+@for(course of courseService.courses(); track course.code) {
+  <p>{{ course.coursename }}</p>
+}
