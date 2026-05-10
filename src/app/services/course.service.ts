@@ -13,9 +13,13 @@ export class CourseService {
   courses = signal<Course[]>([]); // signal som ska lagra kurserna
   loading = signal<boolean>(false); // signal som håller koll på om data laddas
 
+  // felhantering
+  error = signal<string | null>(null);
+
   // Hämta kurser från API
   async loadCourses(): Promise<void> {
     this.loading.set(true); // sätt igång laddning
+    this.error.set(null); // nollställ fel
 
     try {
       //Skicka request till Api:t

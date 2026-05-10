@@ -1,4 +1,31 @@
-<p>courses works!</p>
-@for(course of courseService.courses(); track course.code) {
-  <p>{{ course.coursename }}</p>
+@if(courseService.loading()) {
+  <div>Laddar...</div>
 }
+
+@if(courseService.error()) {
+  <p class="error">{{ courseService.error() }}</p>
+}
+
+<table>
+  <thead>
+    <tr>
+      <th>Kurskod</th>
+      <th>Kursnamn</th>
+      <th>Progression</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    @for(course of courseService.courses(); track course.code) {
+    <tr>
+      <td>{{ course.code }}</td>
+      <td>
+        <a [href]="course.syllabus" target="_blank">{{ course.coursename }}</a>
+      </td>
+      <td>{{ course.progression }}</td>
+    </tr>
+    }
+
+  </tbody>
+
+</table>

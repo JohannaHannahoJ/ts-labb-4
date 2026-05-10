@@ -1,6 +1,6 @@
 export interface Course {
     code: string;
     coursename: string;
-    progression: string;
+    progression:  "A" | "B";
     syllabus: string;
 }
