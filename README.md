@@ -1,59 +1,47 @@
-# TsLabb4
+# Laboration 4 – Angular 2 (Programmering i TypeScript, DT208G)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.7.
+**Genomförd av: joha2102**
 
-## Development server
+## Projektbeskrivning
 
-To start a local development server, run:
+Detta projekt är del 2 av Laboration 4 i kursen *Programmering i TypeScript*. Det är en frontend som är byggd för att kommunicera med ett API som levererar information om kurser på Webbutvecklingsprogrammet.
+
+Data hämtas från:
+https://webbutveckling.miun.se/files/ramschema.json
+
+Syftet är att skapa en Angular-applikation som hämtar data från en webbtjänst och presenterar den på skärmen.
+
+## Webbplatsen innehåller
+
+- En tabell med Webbutvecklingsprogrammets ramschema
+- Tabellen visar data för fälten kurskod, kursnamn och progression
+- Sorteringsfunktion för kursnamn, kurskod och progression.
+- Filtreringsfunktion utifrån sökfras,
+
+## Tekniker
+
+- Angular
+- TypeScript
+- HTML & CSS (global samt på komponent-nivå)
+- HttpClient
+- Signals
+- Git & GitHub
+
+
+## Kör projektet lokalt
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Gå sedan till: http://localhost:4200
 
-## Code scaffolding
+Sidan laddas om vid uppdateringar i koden.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+## Bygg projektet
 
 ```bash
 ng build
 ```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Detta kompilerar projektet och placerar de färdiga filerna i mappen `dist/`. 
+Som standard optimeras applikationen för bästa möjliga prestanda och hastighet.
