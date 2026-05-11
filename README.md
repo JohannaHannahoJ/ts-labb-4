@@ -2,6 +2,8 @@
 
 **Genomförd av: joha2102**
 
+Länk till applikationen: https://ts-labb-4.netlify.app/courses
+
 ## Projektbeskrivning
 
 Detta projekt är del 2 av Laboration 4 i kursen *Programmering i TypeScript*. Det är en frontend som är byggd för att kommunicera med ett API som levererar information om kurser på Webbutvecklingsprogrammet.
