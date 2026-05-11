@@ -9,14 +9,15 @@
 <table>
   <thead>
     <tr>
-      <th>Kurskod</th>
-      <th>Kursnamn</th>
-      <th>Progression</th>
+      <th (click)="setSort('code')">Kurskod</th>
+      <th (click)="setSort('coursename')">Kursnamn</th>
+      <th (click)="setSort('progression')">Progression</th>
     </tr>
   </thead>
 
   <tbody>
-    @for(course of courseService.courses(); track course.code) {
+    <!-- Loopar igenom SORTERAD lista -->
+    @for(course of sortedCourses(); track course.code) {
     <tr>
       <td>{{ course.code }}</td>
       <td>
