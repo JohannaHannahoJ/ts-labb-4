@@ -14,6 +14,13 @@ export class Courses {
   sortField = signal<"code" | "coursename" | "progression">("progression");
   // signal som lagrar om sorteringen är stigande/fallande
   sortDirection = signal<"asc" | "desc">("asc");
+  // sökterm som anv skriver in
+  filterText = signal("");
+
+  // Läs in kurser när sidan laddas
+  ngOnInit() {
+    this.courseService.loadCourses();
+  }
 
   // Funktion som körs när användaren klickar på ett av <th>-fälten
   setSort(field: "code" | "coursename" | "progression") {
@@ -29,23 +36,25 @@ export class Courses {
 
   }
 
-  // Läs in kurser när sidan laddas
-  ngOnInit() {
-    this.courseService.loadCourses();
-  }
-
-  // returnerar en sorterad kopia av kurslistan
+  // returnerar en sorterad och filtrerad kopia av kurslistan
   sortedCourses = computed(() => {
 
-    // hämta kurser från service
-    const courses = this.courseService.courses();
+    // hämta sökfras och gör så att den inte är case sensitive
+    const search = this.filterText().trim().toLowerCase();
+
+    // hämtar in kurser och filtrerar dem utifrån sökfras
+    const filtered = this.courseService.courses().filter(course =>
+      course.code.toLowerCase().includes(search) ||
+      course.coursename.toLowerCase().includes(search)
+    );
+
     // hämta valt sorteringsfält
     const field = this.sortField();
     // hämta sorteringsriktning
     const direction = this.sortDirection();
 
     // skapa kopia av arrayen och sortera den
-    return [...courses].sort((a, b) => {
+    return [...filtered].sort((a, b) => {
 
       // stigande ordning
       if (direction === "asc") {

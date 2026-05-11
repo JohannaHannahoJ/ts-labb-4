@@ -1,10 +1,16 @@
 @if(courseService.loading()) {
-  <div>Laddar...</div>
+<div>Laddar...</div>
 }
 
 @if(courseService.error()) {
-  <p class="error">{{ courseService.error() }}</p>
+<p class="error">{{ courseService.error() }}</p>
 }
+
+<section class="filter">
+  <label for="filter">Filtrera:</label>
+  <input id="filter" type="text" placeholder="Sök kurskod eller kursnamn..." [value]="filterText()"
+    (input)="filterText.set($any($event.target).value)" />
+</section>
 
 <table>
   <thead>

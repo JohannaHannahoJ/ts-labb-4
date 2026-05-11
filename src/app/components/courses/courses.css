@@ -1,3 +1,25 @@
+.filter {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter label {
+    font-weight: 600;
+}
+
+.filter input {
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background: var(--harmony);
+    color: var(--text);
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+}
+
 table {
     width: 100%;
     margin: 0 auto;
